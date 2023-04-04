@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<>
 			<div className="flex flex-row-reverse w-full h-vh items-start fixed top-0 left-0">
-				<header className="flex justify-between items-center py-6 px-[44px] w-[100%] bg-white">
+				<header className="flex justify-between items-center py-6 px-[44px] w-[100%] bg-white whitespace-nowrap ">
 					{!menuOpen && (
 						<Image
 							src="/icons/logo.svg"
@@ -98,7 +98,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
 				<aside
 					className="h-[100vh] bg-[#232323]"
-					style={{ width: menuOpen ? "30%" : "5%" }}
+					style={{ width: menuOpen ? "30%" : "5%", transition: ".4s ease" }}
 				>
 					<div className="flex justify-between items-center py-6 px-7 bg-[#1F1E1E]">
 						{menuOpen && (
