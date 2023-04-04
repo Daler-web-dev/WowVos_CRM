@@ -15,3 +15,17 @@ input {
     border-left: 1px solid #898989;
     border-right: 1px solid #898989;
 }
+
+.custom-scroll {
+    &::-webkit-scrollbar {
+        background-color: #323233;
+        width: 7px;
+        border-radius: 14px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #ABABAB;
+        border-radius: 14px;
+        height: 40px !important;
+    }
+
+}
