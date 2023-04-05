@@ -162,7 +162,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 										Статус
 									</span>
 									{[1, 2, 3, 4, 5].map((item) => (
-										<div className="flex items-center gap-2.5">
+										<div key={item} className="flex items-center gap-2.5">
 											<input
 												type="checkbox"
 												className="bg-[#484848] rounded-sm w-4 h-4"
@@ -176,7 +176,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 										Координатор
 									</span>
 									{[1, 2, 3, 4, 5].map((item) => (
-										<div className="flex items-center gap-2.5">
+										<div key={item} className="flex items-center gap-2.5">
 											<input
 												type="checkbox"
 												className="bg-[#484848] rounded-sm w-4 h-4"
@@ -192,7 +192,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 					</div>
 				</aside>
 			</div>
-			<main className="pl-[25%] pt-[100px]">{children}</main>
+			<main style={{ paddingLeft: menuOpen ? "25%" : "8%", transition: ".4s ease" }} className="pl-[ pt-[100px]"  >{children}</main>
 			<footer></footer>
 		</>
 	);
