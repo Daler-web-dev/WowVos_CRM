@@ -192,7 +192,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 					</div>
 				</aside>
 			</div>
-			<main style={{ paddingLeft: menuOpen ? "25%" : "8%", transition: ".4s ease" }} className="pl-[ pt-[100px]"  >{children}</main>
+			<main style={{ paddingLeft: menuOpen ? "23%" : "5%", transition: ".4s ease" }} className="pl-[ pt-[100px]"  >{children}</main>
 			<footer></footer>
 		</>
 	);
