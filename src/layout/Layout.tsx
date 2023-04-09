@@ -135,13 +135,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 											Клиники
 										</Link>
 										<Link
-											href="#"
+											href="/sources"
 											className="text-base text-white"
 										>
 											Источники
 										</Link>
 										<Link
-											href="#"
+											href="/coordinators"
 											className="text-base text-white"
 										>
 											Координаторы
