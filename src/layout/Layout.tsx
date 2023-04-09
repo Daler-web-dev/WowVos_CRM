@@ -123,13 +123,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 								<>
 									<nav className="flex flex-col gap-4 px-9 py-6">
 										<Link
-											href="#"
+											href="/"
 											className="text-base text-white"
 										>
 											Пациенты
 										</Link>
 										<Link
-											href="#"
+											href="/clinics"
 											className="text-base text-white"
 										>
 											Клиники
