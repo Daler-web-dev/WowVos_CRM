@@ -1,38 +1,21 @@
 import Image from "next/image";
 import React from "react";
 
-interface TableProps {}
+interface TableProps {
+	headings: Array<any>
+}
 
-const Table: React.FC<TableProps> = () => {
+const Table: React.FC<TableProps> = ({headings}) => {
 	return (
 		<div className="overflow-x-auto h-[77vh] bg-[#EEEFF1] mt-10 relative z-40 px-4">
 			<table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 z-40">
 				<thead className="text-xs text-gray-700">
 					<tr>
-						<th scope="col" className="px-6 py-3">
-							Пациент
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Дата обращения
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Город проживания
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Диагноз
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Вылет и прилет
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Координатор
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Источник
-						</th>
-						<th scope="col" className="px-6 py-3">
-							Клиника
-						</th>
+						{headings.map(item => (
+							<th scope="col" className="px-6 py-3">
+								{item}
+							</th>
+						))}
 					</tr>
 				</thead>
 				<tbody>

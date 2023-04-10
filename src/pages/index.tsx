@@ -45,7 +45,7 @@ export default function Home() {
 					<Pagination />
 				</div>
 			</div>
-			<Table />
+			<Table headings={["Пациент","Дата обращения","Город проживания","Диагноз","Вылет и прилет","Координатор","Источник","Клиника"]} />
 		</section>
 	);
 }

@@ -18,7 +18,7 @@ export default function Clinics() {
 					<Pagination />
 				</div>
 			</div>
-			<Table />
+			<Table headings={["Клиника", "Город", "Координатор", "Номер"]} />
 		</section>
 	);
 }

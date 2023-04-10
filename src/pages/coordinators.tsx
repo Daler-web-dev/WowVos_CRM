@@ -18,7 +18,7 @@ export default function Coordinators() {
 					<Pagination />
 				</div>
 			</div>
-			<Table />
+			<Table headings={["Имя", "Номер"]} />
 		</section>
 	);
 }

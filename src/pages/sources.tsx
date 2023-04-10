@@ -18,7 +18,7 @@ export default function Sources() {
 					<Pagination />
 				</div>
 			</div>
-			<Table />
+			<Table headings={["Название", "От кого"]} />
 		</section>
 	);
 }
