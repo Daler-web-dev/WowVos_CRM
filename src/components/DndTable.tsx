@@ -8,7 +8,7 @@ interface DndTableProps {}
 const DndTable: React.FC<DndTableProps> = () => {
 	return (
 		<section className="w-full bg-[#EEEFF1] h-screen px-6 py-3 relative z-40">
-			<div className="flex items-start gap-2 w-full h-full">
+			<div className="flex items-start gap-2 w-full h-full overflow-x-scroll">
                 <Column column={ColoumnType.NEW_APPEAL} />
                 <Column column={ColoumnType.REQ_SENT} />
                 <Column column={ColoumnType.IN_PROCESS} />

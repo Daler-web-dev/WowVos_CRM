@@ -5,18 +5,27 @@ import { CardModel } from "@/utils/models";
 import { useCardDragAndDrop } from "@/hooks/useCardDragAndDrop";
 
 interface CardProps {
-    index: number
-    card: CardModel
+	index: number;
+	card: CardModel;
 }
 
-const Card: React.FC<CardProps> = ({index, card}) => {
-
-    const { ref, isDragging } = useCardDragAndDrop<HTMLDivElement>(
-		{ card, index }
-	);    
+const Card: React.FC<CardProps> = ({ index, card }) => {
+	const { ref, isDragging } = useCardDragAndDrop<HTMLDivElement>({
+		card,
+		index,
+	});
+	console.log(isDragging);
+	
 
 	return (
-		<div ref={ref} className="w-full bg-[#F1F2F4] p-4 rounded-lg" style={{opacity: isDragging ? 0.4 : 1}} >
+		<div
+			ref={ref}
+			className="w-full bg-[#F1F2F4] p-4 rounded-lg cursor-grab"
+			style={{
+				opacity: isDragging ? 0.4 : 1,
+				cursor: isDragging ? "grabbing" : "grab",
+			}}
+		>
 			<div className="flex flex-col gap-2 mb-5 ">
 				<span className="text-base font-medium">{card.full_name}</span>
 				<span className="text-[#909090] text-base">
