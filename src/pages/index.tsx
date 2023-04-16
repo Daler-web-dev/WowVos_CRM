@@ -3,6 +3,7 @@ import { BiMenuAltRight, BiMenu } from "react-icons/bi";
 import Pagination from "@/components/Pagination";
 import { useState } from "react";
 import Table from "@/components/Table";
+import DndTable from "@/components/DndTable";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,7 @@ export default function Home() {
 
 	return (
 		<section className="h-full">
-			<div className="flex justify-between items-center w-full px-8 bg-white">
+			<div className="flex justify-between items-center w-full px-8 bg-white relative z-30 ">
 				<div className="flex flex-col gap-4">
 					<div className="flex items-center gap-10">
 						<h1 className="text-3xl font-medium">Пациенты</h1>
@@ -45,7 +46,22 @@ export default function Home() {
 					<Pagination />
 				</div>
 			</div>
-			<Table headings={["Пациент","Дата обращения","Город проживания","Диагноз","Вылет и прилет","Координатор","Источник","Клиника"]} />
+			{isTable ? (
+				<Table
+					headings={[
+						"Пациент",
+						"Дата обращения",
+						"Город проживания",
+						"Диагноз",
+						"Вылет и прилет",
+						"Координатор",
+						"Источник",
+						"Клиника",
+					]}
+				/>
+			) : (
+				<DndTable />
+			)}
 		</section>
 	);
 }

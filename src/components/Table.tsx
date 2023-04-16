@@ -11,8 +11,8 @@ const Table: React.FC<TableProps> = ({headings}) => {
 			<table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 z-40">
 				<thead className="text-xs text-gray-700">
 					<tr>
-						{headings.map(item => (
-							<th scope="col" className="px-6 py-3">
+						{headings.map((item, idx) => (
+							<th key={idx} scope="col" className="px-6 py-3">
 								{item}
 							</th>
 						))}

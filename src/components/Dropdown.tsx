@@ -15,8 +15,8 @@ const Dropdown: React.FC<DropdownProps> = ({ children, arr }) => {
 				isOpen && (
 					<ul className="w-44 bg-gray-700 py-2 rounded-md absolute top-[50px] left-[-100px] whitespace-nowrap" >
 						{
-							arr.map((item:any) => (
-								<li className="px-4 py-2 text-white hover:bg-gray-600 cursor-pointer " >{item}</li>
+							arr.map((item:any, idx:number) => (
+								<li key={idx} className="px-4 py-2 text-white hover:bg-gray-600 cursor-pointer " >{item}</li>
 							))
 						}
 					</ul>
