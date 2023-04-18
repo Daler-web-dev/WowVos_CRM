@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 					)}
 					<nav className="flex items-center gap-14">
 						<Link
-							href="#"
+							href="/newCustomer"
 							className="flex items-center gap-2 opacity-[.5]"
 						>
 							<AiOutlinePlusCircle size={24} />

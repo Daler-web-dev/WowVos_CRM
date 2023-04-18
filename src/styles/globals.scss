@@ -30,6 +30,22 @@ input {
 
 }
 
+.active-tab {
+    color: #22B5DC;
+    border-bottom: #22B5DC 2px solid;
+    padding-bottom: 6px;
+    opacity: 1 !important;
+}
+
+.def-input {
+    border: 1px solid #D6D5D5;
+    padding: 11px 16px;
+    border-radius: 4px;
+    &::placeholder {
+        color: black;
+    }
+}
+
 table th {
     text-align: start;
     color: #828282;
