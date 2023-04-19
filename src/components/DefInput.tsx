@@ -1,15 +1,25 @@
 import React from "react";
 
-interface DefInputProps {}
+interface DefInputProps {
+	label?: string;
+	placeholder?: string;
+	type?: string;
+	error?: string;
+}
 
-const DefInput: React.FC<DefInputProps> = () => {
+const DefInput: React.FC<DefInputProps> = ({
+	type = "text",
+	placeholder = "",
+	error,
+	label = "",
+}) => {
 	return (
-		<label htmlFor="" className="flex flex-col gap-3">
-			<span>ФИО</span>
+		<label htmlFor="" className="flex flex-col gap-1 w-full">
+			<span>{label}</span>
 			<input
-				type="text"
-				placeholder="Введите имя"
-				className="def-input"
+				type={type}
+				placeholder={placeholder}
+				className="def-input w-full placeholder:text-[#333333] placeholder:text-base font-normal" 
 			/>
 		</label>
 	);
