@@ -1,4 +1,6 @@
 import DefInput from "@/components/DefInput";
+import Add_form from "@/components/tabs_content/Add_form";
+import Process_form from "@/components/tabs_content/Process_form";
 import React, { useState } from "react";
 import { MdArrowBackIosNew } from "react-icons/md";
 
@@ -7,9 +9,7 @@ interface newCustomerProps {}
 const newCustomer: React.FC<newCustomerProps> = () => {
 	const [tabs, setTabs] = useState([
 		"Общая информация",
-		"История болезней",
-		"Процесс",
-		"История обращений",
+		"Процесс"
 	]);
 	const [active_tab, setActive_tab] = useState(0);
 
@@ -44,30 +44,9 @@ const newCustomer: React.FC<newCustomerProps> = () => {
 						))}
 					</div>
                     <div className="flex flex-col items-center justify-between w-full pt-10 gap-4" > 
-                        <form className="flex w-full gap-4" >
-                            <div className="flex flex-col w-full gap-2.5" >
-								<DefInput label="ФИО" placeholder="Введите имя" />
-								<div className="grid grid-cols-2 gap-2.5 w-full" >
-									<DefInput label="Дата рождения" placeholder="Выберите дату рождения" type="date" />
-									<DefInput label="Город проживания" placeholder="Выберите город проживания" />
-									<DefInput label="Телефон пациента" placeholder="Введите номер телефона" type="tel" />
-									<DefInput label="Email" placeholder="Введите электронную почту" type="email" />
-									<DefInput label="ФИО" placeholder="Введите номер телефона" type="tel" />
-								</div>
-                            </div>
-							<div className="flex flex-col w-full gap-2.5" >
-								<DefInput label="ФИО" placeholder="Введите имя" />
-								<div className="flex flex-col gap-1" >
-									<span>Диагноз</span>
-									<textarea placeholder="Напишите диагноз" className="def-input w-full h-[136px]" ></textarea>
-								</div>
-								<div className="flex gap-2.5 w-full" >
-									<DefInput label="Координатор" placeholder="Выберите координатора" />
-									<DefInput label="Координатор в клинике" placeholder="Выберите координатора" />
-								</div>
-								<DefInput label="Дата обращения" placeholder="Выберите координатора" type="date" />
-							</div>
-                        </form>
+						{
+							active_tab === 0 ? <Add_form/> : <Process_form/>
+						}
 						<center className="flex gap-5" >
 							<button className="py-4 px-[53px] bg-[#4992CC] text-white text-lg font-semibold" >Сохранить</button>
 							<button className="py-4 px-[53px] bg-[#EB5757] text-white text-lg font-semibold" >Отменить</button>
