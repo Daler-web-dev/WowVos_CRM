@@ -15,12 +15,6 @@ const newCustomer: React.FC<newCustomerProps> = () => {
 	]);
 	const [active_tab, setActive_tab] = useState(0);
 	const router = useRouter()
-
-	const {changeCreateTitleAndPath} = useContext(createAny);
-
-	useEffect(() => {
-		changeCreateTitleAndPath("Создать пациента", "/newCustomer")
-	}, []);
 	
 	return (
 		<div className="relative z-30">

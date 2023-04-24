@@ -1,7 +1,17 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
+import { createAny } from "@/context/createAny";
+import { useContext, useEffect } from "react";
 
 export default function Sources() {
+
+	const {changeCreateTitleAndPath} = useContext(createAny);
+
+	useEffect(() => {
+		changeCreateTitleAndPath("Добавить источник", "/newSource")
+	}, []);
+
+
 	return (
 		<section className="h-full">
 			<div className="flex justify-between items-center w-full px-8 bg-white">
