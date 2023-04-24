@@ -25,7 +25,7 @@ const newCustomer: React.FC<newCustomerProps> = () => {
 						<button onClick={router.back} >
 							<MdArrowBackIosNew size="30" color="#22B5DC" />
 						</button>
-						<h1 className="text-3xl font-medium">Новый клиент</h1>
+						<h1 className="text-3xl font-medium">Борисова Ольга</h1>
 					</div>
 					<span className="opacity-[.4]">
 						Home / Level 2 / Level 3 / Пациенты

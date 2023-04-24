@@ -18,7 +18,7 @@ const newCustomer: React.FC<newCustomerProps> = () => {
 	
 	return (
 		<div className="relative z-30">
-			<div className="flex justify-between items-center w-full px-8 bg-white relative z-30 ">
+			<div className="flex justify-between items-center w-full py-6 px-8 bg-white relative z-30 ">
 				<div className="flex flex-col gap-4">
 					<div className="flex items-center gap-4">
 						<button onClick={router.back} >
