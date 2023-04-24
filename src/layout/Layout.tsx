@@ -6,12 +6,11 @@ import {
 	AiOutlinePlusCircle,
 	AiOutlineSearch,
 	AiOutlineSetting,
-	AiOutlineMenu,
 } from "react-icons/ai";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiChevronDown } from "react-icons/bi";
 import Aside from "@/components/layout_components/Aside";
-
+import { createAny } from "@/context/createAny";
 
 interface LayoutProps {
 	children: JSX.Element;
@@ -19,9 +18,15 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 	const [menuOpen, setMenuOpen] = useState(true);
+	const [createAnyState, setCreateAnyState] = useState({title: 'Создать пациента', path: "/newCustomer"})
+
+	const changeCreateTitleAndPath = (title:string, path:string) => {
+		setCreateAnyState({title, path})
+	}
 
 	return (
 		<>
+		<createAny.Provider value={{createAnyState, changeCreateTitleAndPath}} >
 			<div className="flex flex-row-reverse w-full h-vh items-start fixed top-0 left-0">
 				<header className="flex justify-between items-center py-6 px-[44px] w-[100%] bg-white whitespace-nowrap ">
 					{!menuOpen && (
@@ -34,12 +39,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 					)}
 					<nav className="flex items-center gap-14">
 						<Link
-							href="/newCustomer"
+							href={createAnyState.path}
 							className="flex items-center gap-2 opacity-[.5]"
 						>
 							<AiOutlinePlusCircle size={24} />
 							<span className="text-base font-medium">
-								Создать пациента
+								{createAnyState.title}
 							</span>
 						</Link>
 						<Link
@@ -48,14 +53,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 						>
 							<AiOutlineSetting size={24} />
 							<span className="text-base font-medium">
-								Создать пациента
+								Настройки
 							</span>
 						</Link>
 					</nav>
 					<label htmlFor="simple-search" className="sr-only">
 						Search
 					</label>
-					<form className="w-[35%] flex items-center gap-2 py-2 px-5 border border-black rounded-xl opacity-[.5]">
+					<form className="w-[25%] flex items-center gap-2 px-5 border border-black rounded-xl opacity-[.5]">
 						<AiOutlineSearch size={24} />
 						<input
 							type="text"
@@ -100,6 +105,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 			</div>
 			<main style={{ paddingLeft: menuOpen ? "23%" : "5%", transition: ".4s ease" }} className="pl-[ pt-[100px]"  >{children}</main>
 			<footer></footer>
+		</createAny.Provider>
 		</>
 	);
 };
