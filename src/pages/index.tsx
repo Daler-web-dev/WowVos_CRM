@@ -1,14 +1,21 @@
 import { Inter } from "next/font/google";
 import { BiMenuAltRight, BiMenu } from "react-icons/bi";
 import Pagination from "@/components/Pagination";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Table from "@/components/Table";
 import DndTable from "@/components/DndTable";
+import { createAny } from "@/context/createAny";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 	const [isTable, setTable] = useState(true);
+
+	const {changeCreateTitleAndPath} = useContext(createAny);
+
+	useEffect(() => {
+		changeCreateTitleAndPath("Создать пациента", "/newCustomer")
+	}, []);
 
 	return (
 		<section className="h-full">
