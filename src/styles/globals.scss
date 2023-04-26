@@ -47,7 +47,7 @@ input {
 }
 .anti-scroll {
     &::-webkit-scrollbar {
-        background-color: #323233;
+        background-color: transparent;
         width: 7px;
         border-radius: 14px;
     }
