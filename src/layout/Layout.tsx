@@ -61,7 +61,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 						Search
 					</label>
 					<form className="w-[25%] flex items-center gap-2 px-5 border border-black rounded-xl opacity-[.5]">
-						<AiOutlineSearch size={24} />
+						<AiOutlineSearch size={24} className="min-w-[20px]" />
 						<input
 							type="text"
 							className="border-none placeholder:text-black"
