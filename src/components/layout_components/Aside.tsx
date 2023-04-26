@@ -3,6 +3,7 @@ import React from "react";
 import { FiHome, FiFilter } from "react-icons/fi";
 import {AiOutlineMenu} from "react-icons/ai";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 interface AsideProps {
     menuOpen: boolean,
@@ -10,6 +11,8 @@ interface AsideProps {
 }
 
 const Aside: React.FC<AsideProps> = ({menuOpen, setMenuOpen}) => {
+	const {pathname} = useRouter()
+
 	return (
 		<aside
 			className="h-[100vh] bg-[#232323] relative z-100"
@@ -37,24 +40,26 @@ const Aside: React.FC<AsideProps> = ({menuOpen, setMenuOpen}) => {
 					{menuOpen && (
 						<>
 							<nav className="flex flex-col gap-4 px-9 py-6">
-								<Link href="/" className="text-base text-white">
+								<Link 
+									href="/"  
+									className={`text-base text-white ${pathname === "/" ? "opacity-100" : "opacity-70"}`} >
 									Пациенты
 								</Link>
 								<Link
 									href="/clinics"
-									className="text-base text-white"
+									className={`text-base text-white ${pathname === "/clinics" ? "opacity-100" : "opacity-70"}`}
 								>
 									Клиники
 								</Link>
 								<Link
 									href="/sources"
-									className="text-base text-white"
+									className={`text-base text-white ${pathname === "/sources" ? "opacity-100" : "opacity-70"}`}
 								>
 									Источники
 								</Link>
 								<Link
 									href="/coordinators"
-									className="text-base text-white"
+									className={`text-base text-white ${pathname === "/coordinators" ? "opacity-100" : "opacity-70"}`}
 								>
 									Координаторы
 								</Link>
