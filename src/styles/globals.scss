@@ -45,6 +45,18 @@ input {
         color: black;
     }
 }
+.anti-scroll {
+    &::-webkit-scrollbar {
+        background-color: #323233;
+        width: 7px;
+        border-radius: 14px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #ABABAB;
+        border-radius: 14px;
+        height: 40px !important;
+    }
+}
 
 table th {
     text-align: start;
