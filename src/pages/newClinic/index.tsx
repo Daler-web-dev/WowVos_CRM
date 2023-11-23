@@ -9,7 +9,7 @@ import { createAny } from "@/context/createAny";
 
 interface newCustomerProps {}
 
-const newCustomer: React.FC<newCustomerProps> = () => {
+const NewCustomer: React.FC<newCustomerProps> = () => {
 	const [tabs, setTabs] = useState([
 		"Добавить информацию"
 	]);
@@ -84,4 +84,4 @@ const newCustomer: React.FC<newCustomerProps> = () => {
 	);
 };
 
-export default newCustomer;
+export default NewCustomer;
