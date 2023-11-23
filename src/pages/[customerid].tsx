@@ -16,6 +16,7 @@ const NewCustomer: React.FC<newCustomerProps> = () => {
 	]);
 	const [active_tab, setActive_tab] = useState(0);
 	const router = useRouter()
+
 	
 	return (
 		<div className="relative z-30">
